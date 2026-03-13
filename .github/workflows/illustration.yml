@@ -1,0 +1,19 @@
+name: worker
+
+on:
+  push:
+
+jobs:
+  chemist:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        approve: ["diverse", "limited", "tour", "entry", "protection"]
+        visibility: ["waken", "prejudice", "occupation", "report"]
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-java@v5
+      with:
+        distribution: 'zulu'
+        java-version: '25'
+    - run: java -jar gm
